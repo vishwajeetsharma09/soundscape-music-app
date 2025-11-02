@@ -54,9 +54,9 @@ git push -u origin main
 ## Step 4: Configure Vercel Project
 - [ ] **Framework Preset:** Other
 - [ ] **Root Directory:** `./` (default)
-- [ ] **Build Command:** `cd frontend && npm install && npm run build`
-- [ ] **Output Directory:** `frontend/dist`
-- [ ] **Install Command:** `npm install`
+- [ ] **Build Command:** Leave empty (uses vercel.json)
+- [ ] **Output Directory:** Leave empty (uses vercel.json)
+- [ ] **Install Command:** Leave empty (uses vercel.json)
 
 ## Step 5: Add Environment Variables
 In Vercel's Environment Variables section, add:

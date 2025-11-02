@@ -47,9 +47,9 @@ git push -u origin main
 ### 2.3 Configure Project Settings
 **Framework Preset:** Other
 **Root Directory:** `./` (leave as default)
-**Build Command:** `cd frontend && npm install && npm run build`
-**Output Directory:** `frontend/dist`
-**Install Command:** `npm install`
+**Build Command:** Leave empty (will use vercel.json configuration)
+**Output Directory:** Leave empty (will use vercel.json configuration)
+**Install Command:** Leave empty (will use vercel.json configuration)
 
 ### 2.4 Add Environment Variables
 In the "Environment Variables" section, add these:
