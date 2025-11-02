@@ -98,3 +98,4 @@ Thumbs.db
 
 # Test files
 backend/test-youtube-api.js
+.vercel
