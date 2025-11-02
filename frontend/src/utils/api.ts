@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 // Use relative URLs in production, localhost in development
-const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 
-  (import.meta.env.PROD ? '' : 'http://localhost:3001');
+const isDevelopment = import.meta.env.DEV;
+const API_BASE_URL = isDevelopment ? 'http://localhost:3001' : '';
 
 export interface WeatherData {
   condition: string;
@@ -41,7 +41,8 @@ export interface MusicResponse {
  */
 export async function fetchWeather(lat: number, lon: number): Promise<WeatherData> {
   try {
-    const response = await axios.get<WeatherData>(`${API_BASE_URL}/api/weather`, {
+    const url = isDevelopment ? `${API_BASE_URL}/api/weather` : '/api/weather';
+    const response = await axios.get<WeatherData>(url, {
       params: { lat, lon },
     });
     return response.data;
@@ -57,7 +58,8 @@ export async function fetchWeather(lat: number, lon: number): Promise<WeatherDat
  */
 export async function fetchMusic(mood: string): Promise<MusicResponse> {
   try {
-    const response = await axios.get<MusicResponse>(`${API_BASE_URL}/api/music`, {
+    const url = isDevelopment ? `${API_BASE_URL}/api/music` : '/api/music';
+    const response = await axios.get<MusicResponse>(url, {
       params: { 
         mood,
         _t: Date.now() // Cache-busting parameter
