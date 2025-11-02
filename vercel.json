@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "api/*.js": {
-      "runtime": "@vercel/node"
-    }
-  },
   "builds": [
     {
       "src": "frontend/package.json",
@@ -11,6 +6,10 @@
       "config": {
         "distDir": "dist"
       }
+    },
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
