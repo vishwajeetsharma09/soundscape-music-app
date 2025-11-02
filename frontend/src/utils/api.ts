@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost:3001';
+// Use relative URLs in production, localhost in development
+const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 
+  (import.meta.env.PROD ? '' : 'http://localhost:3001');
 
 export interface WeatherData {
   condition: string;
